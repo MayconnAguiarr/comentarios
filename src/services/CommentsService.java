@@ -1,19 +1,17 @@
 package services;
 
 import java.util.List;
-
-import model.Comments;
-import repository.CommentsRepository;
+import model.Comment;
 
 public class CommentsService {
 
-	private CommentsRepository commentsRepository = new CommentsRepository();
-
-	public void save(String comments, List<Comments> answers) {		
-		commentsRepository.save(comments, answers);
+	private Comment comment = new Comment();	
+	
+	public void save(Comment comment) {
+		this.comment.addAnswers(comment);		
 	}
 	
-	public List<Comments> list() {
-		return commentsRepository.list();
+	public List<Comment> list() {
+		return  comment.getAnswers();
 	}
 }
