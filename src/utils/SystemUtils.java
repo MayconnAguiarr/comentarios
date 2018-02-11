@@ -9,7 +9,7 @@ public class SystemUtils {
 		System.out.println(message);
 
 		return input.nextLine().trim();
-	}
+	} 
 
 	public static String readComment() {
 		return readInput("Digite o comentário");
@@ -22,5 +22,5 @@ public class SystemUtils {
 			continuar = readInput(msg);
 		}
 		return continuar.toUpperCase().equals("S");
-	}
+	}	
 }

@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Comment {
-
 	private String message;
 	private Author author;
-	private int pai;
-	private List<Comment> answers = new ArrayList<>();
-
+	private int father;
+	private List<Comment> comments = new ArrayList<>();
+			
 	public String getMessage() {
 		return message;
 	}
@@ -24,21 +23,25 @@ public class Comment {
 
 	public void setAuthor(Author author) {
 		this.author = author;
+	}	
+
+	public int getFather() {
+		return father;
+	}
+
+	public void setFather(int father) {
+		this.father = father;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void addComment(Comment comment) {
+		this.comments.add(comment);
 	}
 	
-	public int getPai() {
-		return pai;
-	}
-
-	public void setPai(int pai) {
-		this.pai = pai;
-	}
-
-	public List<Comment> getAnswers() {
-		return answers;
-	}
-
-	public void addAnswers(Comment answers) {
-		this.answers.add(answers);
+	public void removeComment(Comment comment) {
+		this.comments.remove(comment);		
 	}
 }
